@@ -6,6 +6,16 @@
     <PackageId>Xenolope.Extensions</PackageId>
     <NetStandardImplicitPackageVersion>1.6.0</NetStandardImplicitPackageVersion>
     <PackageTargetFallback>$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
+    <Authors>Jonjo McKay</Authors>
+    <Company />
+    <Product />
+    <Description>A bunch of helpful extensions that should really be in the standard library</Description>
+    <PackageProjectUrl>https://github.com/jonjomckay/Xenolope.Extensions</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/jonjomckay/Xenolope.Extensions</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>extensions, standard library, helpful, string, enumerable</PackageTags>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageLicenseUrl>https://github.com/jonjomckay/Xenolope.Extensions/blob/master/LICENSE</PackageLicenseUrl>
   </PropertyGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.0' ">
