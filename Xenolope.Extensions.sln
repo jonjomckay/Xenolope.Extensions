@@ -1,20 +1,20 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.0.0
-MinimumVisualStudioVersion = 10.0.0.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.6
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{DEBF9C2A-C030-4C45-9FB3-190AB107D1D3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{10ADB3E6-4C48-4A27-B1FE-8982F559202C}"
-  ProjectSection(SolutionItems) = preProject
-    global.json = global.json
-  EndProjectSection
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Xenolope.Extensions", "src/Xenolope.Extensions/Xenolope.Extensions.xproj", "{450184A2-16F0-46B5-886F-2FA45D41392D}"
+	ProjectSection(SolutionItems) = preProject
+		build.cake = build.cake
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{E1D268FF-38E6-4040-8E86-6EEFF66DE1BB}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Xenolope.Extensions.Tests", "test/Xenolope.Extensions.Tests/Xenolope.Extensions.Tests.xproj", "{90E0955C-74BC-4899-8FFD-BA7BDB25E9D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xenolope.Extensions", "src\Xenolope.Extensions\Xenolope.Extensions.csproj", "{450184A2-16F0-46B5-886F-2FA45D41392D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xenolope.Extensions.Tests", "test\Xenolope.Extensions.Tests\Xenolope.Extensions.Tests.csproj", "{90E0955C-74BC-4899-8FFD-BA7BDB25E9D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
