@@ -1,11 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.0</TargetFramework>
+    <TargetFrameworks>netstandard1.0;net40</TargetFrameworks>
     <AssemblyName>Xenolope.Extensions</AssemblyName>
     <PackageId>Xenolope.Extensions</PackageId>
-    <NetStandardImplicitPackageVersion>1.6.0</NetStandardImplicitPackageVersion>
-    <PackageTargetFallback>$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
     <Authors>Jonjo McKay</Authors>
     <Company />
     <Product />
