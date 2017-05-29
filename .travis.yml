@@ -5,4 +5,4 @@ mono: none
 
 script:
   - dotnet restore
-  - dotnet test test/Xenolope.Extensions.Tests
+  - dotnet test test/Xenolope.Extensions.Tests/Xenolope.Extensions.Tests.csproj
