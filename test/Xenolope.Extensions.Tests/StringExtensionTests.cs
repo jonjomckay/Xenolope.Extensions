@@ -7,6 +7,38 @@ namespace Xenolope.Extensions.Tests
     public class StringExtensionTests
     {
         [Fact]
+        public void TestContainsIgnoreCaseWithNull()
+        {
+            string value = null;
+
+            Assert.False(value.ContainsIgnoreCase(string.Empty));
+        }
+
+        [Fact]
+        public void TestContainsIgnoreCaseWithDifferentCasedText()
+        {
+            var value = "test";
+
+            Assert.True(value.ContainsIgnoreCase("TE"));
+        }
+
+        [Fact]
+        public void TestContainsIgnoreCaseWithSamedCasedText()
+        {
+            var value = "test";
+
+            Assert.True(value.ContainsIgnoreCase("te"));
+        }
+
+        [Fact]
+        public void TestContainsIgnoreCaseWithNonContainedText()
+        {
+            var value = "test";
+
+            Assert.False(value.Contains("nope"));
+        }
+
+        [Fact]
         public void TestEqualsIgnoreCaseWithNull()
         {
             string value = null;

@@ -5,6 +5,11 @@ namespace Xenolope.Extensions
 {
     public static class StringExtensions
     {
+        public static bool ContainsIgnoreCase(this string value, string comparison)
+        {
+            return value != null && value.IndexOf(comparison, StringComparison.OrdinalIgnoreCase) >= 0;
+        }
+
         public static bool EqualsIgnoreCase(this string value, string comparison)
         {
             return value != null && value.Equals(comparison, StringComparison.OrdinalIgnoreCase);
