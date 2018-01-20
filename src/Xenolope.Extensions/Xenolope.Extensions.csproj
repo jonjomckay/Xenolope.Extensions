@@ -1,7 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
-    <TargetFrameworks>netstandard1.0;net40</TargetFrameworks>
+    <TargetFrameworks>netstandard1.0;netstandard2.0;net40</TargetFrameworks>
     <AssemblyName>Xenolope.Extensions</AssemblyName>
     <PackageId>Xenolope.Extensions</PackageId>
     <Authors>Jonjo McKay</Authors>
@@ -15,9 +14,7 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageLicenseUrl>https://github.com/jonjomckay/Xenolope.Extensions/blob/master/LICENSE</PackageLicenseUrl>
   </PropertyGroup>
-
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.0' ">
     <PackageReference Include="System.Linq" Version="4.3.0" />
   </ItemGroup>
-
 </Project>
