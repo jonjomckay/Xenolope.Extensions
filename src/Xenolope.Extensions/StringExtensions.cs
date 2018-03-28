@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Linq;
+using System.Reflection;
+using System.Runtime.Serialization;
 
 namespace Xenolope.Extensions
 {
@@ -95,6 +97,17 @@ namespace Xenolope.Extensions
         /// <returns>An enum constant</returns>
         public static T ToEnum<T>(this string value)
         {
+            var enumType = typeof(T);
+            
+            foreach (var name in Enum.GetNames(enumType))
+            {
+                var enumMemberAttribute = enumType.GetRuntimeField(name).GetCustomAttribute<EnumMemberAttribute>();
+                if (enumMemberAttribute != null && enumMemberAttribute.Value == value)
+                {
+                    return (T) Enum.Parse(enumType, name);
+                }
+            }
+            
             return (T) Enum.Parse(typeof(T), value, true);
         }
 

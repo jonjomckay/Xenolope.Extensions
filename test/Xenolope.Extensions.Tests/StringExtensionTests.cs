@@ -189,6 +189,24 @@ namespace Xenolope.Extensions.Tests
         {
             Assert.Equal(Gender.Male, "male".ToEnum<Gender>());
         }
+        
+        [Fact]
+        public void TestToEnumWithMemberAttribute()
+        {
+            Assert.Equal(Position.Employee, "position_employee".ToEnum<Position>());
+        }
+        
+        [Fact]
+        public void TestToEnumWithMemberAttributeWithNonMemberAttributeString()
+        {
+            Assert.Equal(Position.Employee, "employee".ToEnum<Position>());
+        }
+        
+        [Fact]
+        public void TestToEnumWithMemberAttributeWithInvalidString()
+        {
+            Assert.Throws<ArgumentException>(() => "janitor".ToEnum<Position>());
+        }
 
         [Fact]
         public void TestToEnumWithInvalidString()
