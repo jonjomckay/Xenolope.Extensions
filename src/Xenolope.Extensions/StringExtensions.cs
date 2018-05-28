@@ -7,9 +7,26 @@ namespace Xenolope.Extensions
 {
     public static class StringExtensions
     {
+        /// <summary>
+        /// Check if a string contains another string, ignoring the casing
+        /// </summary>
+        /// <param name="value">The string value to check</param>
+        /// <param name="comparison">The value to check for</param>
+        /// <returns>Whether the string contains the given value</returns>
         public static bool ContainsIgnoreCase(this string value, string comparison)
         {
             return value != null && value.IndexOf(comparison, StringComparison.OrdinalIgnoreCase) >= 0;
+        }
+
+        /// <summary>
+        /// Check if a string ends with another string, ignoring the casing
+        /// </summary>
+        /// <param name="value">The string value to check</param>
+        /// <param name="comparison">The value to check for</param>
+        /// <returns>Whether the string ends with the given value</returns>
+        public static bool EndsWithIgnoreCase(this string value, string comparison)
+        {
+            return value != null && value.EndsWith(comparison, StringComparison.OrdinalIgnoreCase);
         }
 
         public static bool EqualsIgnoreCase(this string value, string comparison)
@@ -87,6 +104,17 @@ namespace Xenolope.Extensions
             }
 
             return true;
+        }
+
+        /// <summary>
+        /// Check if a string starts with another string, ignoring the casing
+        /// </summary>
+        /// <param name="value">The string value to check</param>
+        /// <param name="comparison">The value to check for</param>
+        /// <returns>Whether the string starts with the given value</returns>
+        public static bool StartsWithIgnoreCase(this string value, string comparison)
+        {
+            return value != null && value.StartsWith(comparison, StringComparison.OrdinalIgnoreCase);
         }
 
         /// <summary>

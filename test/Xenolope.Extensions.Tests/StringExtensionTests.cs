@@ -39,6 +39,38 @@ namespace Xenolope.Extensions.Tests
         }
 
         [Fact]
+        public void TestEndsWithIgnoreCaseWithNull()
+        {
+            string value = null;
+
+            Assert.False(value.EndsWithIgnoreCase(string.Empty));
+        }
+
+        [Fact]
+        public void TestEndsWithIgnoreCaseWithDifferentCasedText()
+        {
+            var value = "test";
+
+            Assert.True(value.EndsWithIgnoreCase("ST"));
+        }
+
+        [Fact]
+        public void TestEndsWithIgnoreCaseWithSamedCasedText()
+        {
+            var value = "test";
+
+            Assert.True(value.EndsWithIgnoreCase("st"));
+        }
+
+        [Fact]
+        public void TestEndsWithIgnoreCaseWithNonContainedText()
+        {
+            var value = "test";
+
+            Assert.False(value.EndsWithIgnoreCase("nope"));
+        }
+
+        [Fact]
         public void TestEqualsIgnoreCaseWithNull()
         {
             string value = null;
@@ -182,6 +214,38 @@ namespace Xenolope.Extensions.Tests
             var value = " \t   hello   \r\n";
 
             Assert.False(value.IsNullOrWhitespace());
+        }
+
+        [Fact]
+        public void TestStartsWithIgnoreCaseWithNull()
+        {
+            string value = null;
+
+            Assert.False(value.StartsWithIgnoreCase(string.Empty));
+        }
+
+        [Fact]
+        public void TestStartsWithIgnoreCaseWithDifferentCasedText()
+        {
+            var value = "test";
+
+            Assert.True(value.StartsWithIgnoreCase("TE"));
+        }
+
+        [Fact]
+        public void TestStartsWithIgnoreCaseWithSamedCasedText()
+        {
+            var value = "test";
+
+            Assert.True(value.StartsWithIgnoreCase("te"));
+        }
+
+        [Fact]
+        public void TestStartsWithIgnoreCaseWithNonContainedText()
+        {
+            var value = "test";
+
+            Assert.False(value.StartsWithIgnoreCase("nope"));
         }
 
         [Fact]
