@@ -32,6 +32,14 @@ namespace Xenolope.Extensions.Tests
 
             Assert.Equal("value", dictionary.GetValueOrDefault("key", "default value"));
         }
+        
+        [Fact]
+        public void TestGetValueOrDefaultWithValidDictionaryAndNoDefault()
+        {
+            var dictionary = new Dictionary<string, string>();
+
+            Assert.Null(dictionary.GetValueOrDefault("key"));
+        }
 
         [Fact]
         public void TestGetValueOrDefaultWithInvalidKey()

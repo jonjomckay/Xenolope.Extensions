@@ -8,7 +8,7 @@ namespace Xenolope.Extensions
         public static TValue GetValueOrDefault<TKey, TValue>(
             this IDictionary<TKey, TValue> dictionary,
             TKey key,
-            TValue defaultValue)
+            TValue defaultValue = default(TValue))
         {
             if (dictionary == null)
             {
