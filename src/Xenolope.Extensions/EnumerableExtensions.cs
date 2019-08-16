@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Xenolope.Extensions
@@ -59,6 +60,28 @@ namespace Xenolope.Extensions
         public static bool IsNotEmpty<T>(this IEnumerable<T> value)
         {
             return IsNotNullOrEmpty(value);
+        }
+
+        /// <summary>
+        /// Exclude values in an enumerable that do not match a given predicate.
+        /// </summary>
+        /// <param name="enumerable">The enumerable to filter</param>
+        /// <param name="predicate">The predicate used to filter</param>
+        /// <returns>An enumerable that does not contain values that match the predicate</returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        public static IEnumerable<T> WhereNot<T>(this IEnumerable<T> enumerable, Func<T, bool> predicate)
+        {
+            if (enumerable == null)
+            {
+                throw new ArgumentNullException(nameof(enumerable));
+            }
+
+            if (predicate == null)
+            {
+                throw new ArgumentNullException(nameof(predicate));
+            }
+
+            return enumerable.Where(arg => !predicate(arg));
         }
     }
 }

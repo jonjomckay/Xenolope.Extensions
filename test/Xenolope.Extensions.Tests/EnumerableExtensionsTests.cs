@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Xunit;
 
 namespace Xenolope.Extensions.Tests
@@ -153,6 +155,38 @@ namespace Xenolope.Extensions.Tests
             };
 
             Assert.False(enumerable.IsEmpty());
+        }
+
+        [Fact]
+        public void TestWhereNotWithNullPredicate()
+        {
+            var enumerable = new List<string>
+            {
+                "value",
+                "other",
+                "jonjo"
+            };
+
+            Assert.Throws<ArgumentNullException>(() => enumerable.WhereNot(null));
+        }
+
+        [Fact]
+        public void TestWhereNotWithValidPredicate()
+        {
+            var enumerable = new List<string>
+            {
+                "value",
+                "other",
+                "jonjo"
+            };
+
+            var result = enumerable
+                .WhereNot(value => value == "jonjo")
+                .ToList();
+
+            Assert.Equal(2, result.Count);
+            Assert.Equal("value", result[0]);
+            Assert.Equal("other", result[1]);
         }
     }
 }
